@@ -27,11 +27,13 @@ namespace DeterminanteMatriz
                 case 2:
                     matriz = new int[2, 2];
                     PreencherMatriz(matriz);
+                    ExibirMatriz(matriz);
                     Console.WriteLine($"A determinante da matriz é: {Matriz2(matriz)}");
                     break;
                 case 3:
                     matriz = new int[3, 3];
                     PreencherMatriz(matriz);
+                    ExibirMatriz(matriz);
                     Console.WriteLine($"A determinante da matriz é: {Matriz3(matriz)}");
                     break;
                 default:
@@ -39,6 +41,18 @@ namespace DeterminanteMatriz
                     break;
             }
             Console.ReadKey();
+        }
+        private static void ExibirMatriz(int[,] matriz)
+        {
+            Console.WriteLine("Matriz:");
+            for (int i = 0; i < matriz.GetLength(0); i++) 
+            {
+                for (int j = 0; j < matriz.GetLength(1); j++) 
+                {
+                    Console.Write(matriz[i, j] + "\t"); 
+                }
+                Console.WriteLine();
+            }
         }
         private static void PreencherMatriz(int[,] matriz)
         {
